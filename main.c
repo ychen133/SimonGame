@@ -85,6 +85,7 @@ unsigned char output = 0;
 unsigned char input;
 unsigned char wrong = 0;
 unsigned char cnt = 0;
+unsigned char seed = 0;
 
 enum testStates {INIT, MENU, FLASH_OFF, FLASH_ON, WAITING, CHECK, LOSE, WIN} curr_state;
 
@@ -108,6 +109,8 @@ void tick2()
 		{
 			if(input != 0)
 			{
+				srand(seed);
+				seed = 0;
 				rounds = 1;
 				array[0] = (rand() % 4);
 				cnt = 0;
@@ -202,7 +205,7 @@ void tick2()
 	{
 		case INIT:
 		{
-			//do nothing
+			seed = 0;
 			break;
 		}
 		case MENU:
@@ -211,6 +214,7 @@ void tick2()
 			index = 0;
 			output = 0x00;
 			wrong = 0;
+			seed++;
 			break;
 		}
 		case FLASH_OFF:
