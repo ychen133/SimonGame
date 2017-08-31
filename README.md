@@ -3,6 +3,8 @@ Repository for the Simon game project
 
 This SimonGame project is about recreating the logic of Simon game. The Simon game is played by memorizing the flashing random sequential pattern shown on the device's lights and entering the memorized sequence through buttons. The game will start with a sequence of one and continue for multiple rounds with each consecutive rounds incrementing the pattern length by one, making the pattern longer to remember and the game more difficult as it goes on. The player loses when they enter the sequence incorrectly. The player wins when they enter the sequence correctly 9 times without error. When lose or win is determined, the project's LCD screen will display the number of rounds the player completed correctly and give them an option to play again with another random pattern.
 
+NOTE: The .sm file was not used with RIMS to generate the .c file for this project. The .c file was hand-coded and the .sm file only gives a description of how the state machine of the game works.  
+
 Components used:
 •	4 LEDs
 •	4 buttons
